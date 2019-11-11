@@ -1,24 +1,23 @@
 pico-8 cartridge // http://www.pico-8.com
 version 18
 __lua__
-l={}x=20y=20u=0v=0k=3w=.02m={{-w,0,-1,4},{w,0,7,4},{0,w,3,0}}for i=0,9 do
-add(l,{x=20*i,y=70+rnd(50)})end
-f=3+flr(rnd(4))l[f].y=l[f+1].y::_::cls(1)g=-1
-c=g
-z={"♥","◆","😐"}
-for i=1,9 do
+l={}x=20y=20u=0v=0k=3w=.02m={{-w,0,-1,4},{w,0,7,4},{0,w,3,0}}e=1000z={"♥","*","😐"}for i=0,10 do
+add(l,{x=15*i,y=70+rnd(50)})end
+f=3+flr(rnd(4))l[f].y=l[f+1].y::_::cls(1)c=-1g=c
+for i=1,10 do
 j,c=l[i].x,l[i].y
-line(g,h,j,c,i-1==f and 7 or 5)g,h=j,c
+line(g,h,j,c,5)g,h=j,c
 end
 if k==3 then
 v+=.01x+=u
 y+=v
-for i=0,2 do if(btn(i))j=m[i+1] u+=j[1] v-=j[2] print("◆",x-j[3],y-j[4],8)end
+for i=0,2 do if(e>0 and btn(i))j=m[i+1] e-=4 u+=j[1] v-=j[2] print("◆",x-j[3],y-j[4],8)end
 end
+?(e/10).."%",1,1
 w=abs(u)+abs(v)<.5
 ?z[k],x-3,y-4,w and 11 or 9
-d=ceil(x/20)r,s=l[d].x,l[d].y
-if(k==3 and (x-r)*(s-l[d+1].y)+(y-s)*(l[d+1].x-r)>0) k=(d==f and w)and 1 or cls(8) or 2
+d=ceil(x/15)r,s,f=l[d].x,l[d].y,l[d+1]
+if(k==3 and(x-r)*(s-f.y)+(y-s)*(f.x-r)>0) k=((s-f.y)<4 and w)and 1 or cls(8)or 2
 flip()goto _
 __gfx__
 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
