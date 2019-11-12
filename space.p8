@@ -2,20 +2,22 @@ pico-8 cartridge // http://www.pico-8.com
 version 18
 __lua__
 n=rnd
-l={}x=20y=20u=0v=0k=3w=.03m={{-w,0,-1,4},{w,0,7,4},{0,w,3,0}}e=100z={"♥","**","😐"}for i=0,9 do
-add(l,{x=15*i,y=70+n(50)})end
-f=3+flr(n(4))l[f].y=l[f+1].y::_::cls(1)c=-1g=c
+l={}x=61y=20u=0v=0k=3w=.03m={{-w,0,-1,4},{w,0,7,4},{0,w,3,0}}e=100z={"♥","**","😐"}for i=0,9 do
+add(l,{x=15*i,y=x+n(x)})end
+f=3+flr(n(4))l[f].y=l[f+1].y::_::cls(1)h=-1g=h
 srand(7)for i=1,10 do
 j,c=l[i].x,l[i].y
-line(g,h,j,c,5)pset(n(128),n(50),6)g,h=j,c
+pset(n(128),n(50),6+(4*t()+n())%2)
+for w=0,75 do
+line(g,h+w,j,c+w,5)end
+g,h=j,c
 end
-w=u*u+v*v<.1
-d=ceil(x/15)r,s,f=l[d].x,l[d].y,l[d+1]
+d=ceil(x/15)w=u*u+v*v<.1
 if k==3 then
 v+=.01x+=u
 y+=v
-if((x-r)*(s-f.y)+(y-s)*(f.x-r)>0) k=((s-f.y)<4 and w)and 1 or cls(8)or 2
-for i=0,2 do if(e>0 and btn(i))j=m[i+1] e-=1 u+=j[1] v-=j[2] print("◆",x-j[3],y-j[4],8)end
+if(pget(x,y)==5) k=(l[d].y-l[d+1].y)<4 and w and 1 or cls(8)or 2
+for i=0,2 do if(e>0 and btn(i))j=m[i+1] e-=1 u+=j[1] v-=j[2]print("◆",x-j[3],y-j[4],8)end
 end
 ?e,1,1
 ?z[k],x-3,y-4,w and 11or 9
