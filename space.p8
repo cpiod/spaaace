@@ -7,7 +7,7 @@ add(l,{x=16*i,y=x+n(x)})end
 f=ceil(n(8))l[f].y=l[f+1].y::_::cls(1)h=-1g=h
 srand(f)for i=1,9 do
 j,c=l[i].x,l[i].y
-pset(n(128),n(55),6+(3*t()+n())%2)for w=0,74 do
+pset(n(128),n(55),6+t()/n()%2)for w=0,74 do
 line(g,h+w,j,c+w,5+w/25)end
 g,h=j,c
 end
@@ -15,8 +15,8 @@ d=ceil(x/16)if k==3then
 v+=.01x+=u
 y+=v
 w=u*u+v*v<.1
-if(pget(x,y)==5)k=l[d].y-l[d+1].y<4 and w and 1or cls(8)or 2
-for i=0,2 do if(e>0 and btn(i))j=m[i+1] u+=j[1] v-=j[2]print("◆",x-j[3],y-j[4],8)e-=1end
+if(pget(x,y)==5)k=abs(l[d].y-l[d+1].y)<4 and w and 1or cls(8)or 2
+for i=0,2 do if(e>0 and btn(i))j=m[i+1] u+=j[1]v-=j[2]print("◆",x-j[3],y-j[4],8)e-=1end
 end
 ?e,x-3,y-13
 ?z[k],x-3,y-4,w and 11or 12
