@@ -7,7 +7,7 @@ add(l,16*i)add(a,x+n(x))end
 f=1+n(8)\1a[f]=a[f+1]::_::cls(1)h=-1g=h
 srand(f)for i=1,9do
 j,c=l[i],a[i]
-pset(n(128),n(55),6+(n(3)*t()+n(2))%2)for w=67,0,-1do
+pset(n(128),n(55),6+(t()+n(2))%2)for w=67,0,-1do
 line(g,h+w,j,c+w,7.3-w/30)end
 g=j
 h=c
@@ -16,7 +16,7 @@ d=1+x\16if k==3then
 v+=.01x+=u
 y+=v
 w=u*u+v*v<.1
-if(y>60and pget(x,y)==7)k=a[d]-a[d+1]<4 and w and 1or cls(8)or 2
+if(y>60and pget(x,y)==7)k=abs(a[d]-a[d+1])<4 and w and 1or cls(8)or 2
 for i=0,2do if(e>0 and btn(i))j=m[i+1] u+=j[1] v-=j[2]print("◆",x-j[3],y-j[4],8)e-=1end
 end
 ?e,x-3,y-13
